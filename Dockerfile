@@ -1,2 +1,5 @@
-FROM tomcat
-COPY target/*.war /usr/local/tomcat/webapps/
+FROM openjdk:17
+
+COPY target/movie-ticket-booking.jar .
+
+ENTRYPOINT ["java", "-jar", "movie-ticket-booking.jar"]
